@@ -1,5 +1,6 @@
 package com.bridgelabz.helloworld.controller;
 import org.springframework.web.bind.annotation.*;
+import com.bridgelabz.helloworld.dto.UserDTO;
 
 @RestController
 @RequestMapping("/hello")
@@ -17,5 +18,10 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String helloParam(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
+    }
+
+    @PostMapping("/post")
+    public String helloPost(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 }
