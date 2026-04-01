@@ -8,4 +8,9 @@ public class HelloController {
     public String hello() {
         return "Hello from BridgeLabz";
     }
+
+    @GetMapping("/query")
+    public String helloQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
